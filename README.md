@@ -17,3 +17,13 @@
  `jobs -l`
 - To kill the job
 `kill (job_id)`
+
+
+## Start the webapp using browser sync
+
+-  Config your web url in webpack.mix.js
+`mix.browserSync('laravel-sandbox.deff')`
+- Install all dependencies
+`yarn` or `npm install`
+- Start browser sync
+`yarn run watch` or `npm run watch`
