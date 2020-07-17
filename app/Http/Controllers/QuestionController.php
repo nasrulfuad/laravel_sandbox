@@ -18,9 +18,11 @@ class QuestionController extends Controller
     {
         $data = $request->validated();
 
-        $question = $questionnaire->questions()->create($data['question']);
+        \DB::transaction(function () use($questionnaire, $data) {
+            $question = $questionnaire->questions()->create($data['question']);
 
-        $question->answers()->createMany($data['answers']);
+            $question->answer()->createMany($data['answers']);
+        });
 
         return redirect()->route('questionnaires.questions.create', ['questionnaire' => $questionnaire->id]);
     }
