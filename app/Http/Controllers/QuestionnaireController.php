@@ -17,7 +17,7 @@ class QuestionnaireController extends Controller
 
     public function store(QuestionnaireRequest $request): RedirectResponse
     {
-        $questionnaire = auth()->user()->questionnaires()->create($request->all());
+        $questionnaire = auth()->user()->questionnaires()->create($request->validated());
 
         return redirect()->route('questionnaires.show', ['questionnaire' => $questionnaire->id]);
     }

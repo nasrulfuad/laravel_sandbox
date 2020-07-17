@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'create' => 'Create New Questionnaire',
     'fields' => [
         'title_label'       => 'Title',
         'title_placeholder' => 'Enter Title',
@@ -10,5 +11,6 @@ return [
         'purpose_placeholder' => 'Enter purpose',
         'purpose_help'        => 'Giving a purpose will increase responses.',
         'submit'              => 'Create Questionnaire'
-    ]
+    ],
+    'add_question' => 'Add New Question',
 ];

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('home.create_questionnaire') }}</div>
+                <div class="card-header">{{ __('questionnaire.create') }}</div>
 
                 <div class="card-body">
                     <form action="{{ route('questionnaires.store') }}" method="POST">
