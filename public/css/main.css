@@ -17877,13 +17877,11 @@ video {
   transition-delay: 1000ms;
 }
 
-.component {
-  --bg-opacity: 1;
-  background-color: #4299e1;
-  background-color: rgba(66, 153, 225, var(--bg-opacity));
+a {
+  text-decoration: none;
   --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
+  color: #38b2ac;
+  color: rgba(56, 178, 172, var(--text-opacity));
 }
 
 @media (min-width: 640px) {

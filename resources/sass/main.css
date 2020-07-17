@@ -1,9 +1,8 @@
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
 
-.component {
-    @apply .bg-blue-500 .text-white;
+a {
+    text-decoration: none;
+    @apply text-teal-500;
 }
