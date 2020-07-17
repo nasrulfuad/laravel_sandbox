@@ -21,9 +21,9 @@ class QuestionController extends Controller
         \DB::transaction(function () use($questionnaire, $data) {
             $question = $questionnaire->questions()->create($data['question']);
 
-            $question->answer()->createMany($data['answers']);
+            $question->answers()->createMany($data['answers']);
         });
 
-        return redirect()->route('questionnaires.questions.create', ['questionnaire' => $questionnaire->id]);
+        return redirect()->route('questionnaires.show', ['questionnaire' => $questionnaire->id]);
     }
 }

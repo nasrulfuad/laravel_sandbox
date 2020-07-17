@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('questionnaires.create') }}" class="btn btn-dark">{{ __('home.create_questionnaire') }}</a>
+                    <a href="{{ route('questionnaires.create') }}" class="btn btn-dark">{{ __('questionnaire.create') }}</a>
                 </div>
             </div>
         </div>
