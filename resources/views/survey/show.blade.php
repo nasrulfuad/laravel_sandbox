@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-dark" type="submit">{{ __('survey.complete_survey') }}</button>
+                <button class="btn btn-block btn-dark mt-4" type="submit">{{ __('survey.complete_survey') }}</button>
             </form>
         </div>
     </div>
