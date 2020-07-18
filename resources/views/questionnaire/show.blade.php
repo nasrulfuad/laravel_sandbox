@@ -28,6 +28,17 @@
                             @endforeach
                         </ul>
                     </div>
+
+                    <div class="card-footer">
+                    <form action="{{ route('questionnaires.questions.destroy', [
+                        'questionnaire' => $questionnaire->id,
+                        'question'      => $question->id
+                    ]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-outline-danger">{{ __('question.button_delete') }}</button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
         </div>

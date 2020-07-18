@@ -20,4 +20,5 @@ return [
 
         'submit'              => 'Add Question'
     ],
+    'button_delete'           => 'Delete Question',
 ];

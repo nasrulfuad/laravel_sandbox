@@ -6,6 +6,7 @@ use App\Http\Requests\Question\QuestionRequest;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Questionnaire;
 use Illuminate\View\View;
+use App\Models\Question;
 
 class QuestionController extends Controller
 {
@@ -24,6 +25,17 @@ class QuestionController extends Controller
             $question->answers()->createMany($data['answers']);
         });
 
-        return redirect()->route('questionnaires.show', ['questionnaire' => $questionnaire->id]);
+        return redirect($questionnaire->path());
+    }
+
+    public function destroy(Questionnaire $questionnaire, Question $question): RedirectResponse
+    {
+        \DB::transaction(function () use($question) {
+            $question->answers()->delete();
+
+            $question->delete();
+        });
+
+        return redirect($questionnaire->path());
     }
 }
