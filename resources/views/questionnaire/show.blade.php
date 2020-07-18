@@ -11,6 +11,9 @@
                     <a class="btn btn-dark" href="{{ route('questionnaires.questions.create', ['questionnaire' => $questionnaire->id]) }}">
                         {{ __('questionnaire.add_question') }}
                     </a>
+                    <a class="btn btn-dark" href="{{ route('surveys.show', ['questionnaire' => "$questionnaire->id", 'slug' => Str::slug($questionnaire->title)]) }}">
+                        {{ __('questionnaire.take_survey') }}
+                    </a>
                 </div>
             </div>
 

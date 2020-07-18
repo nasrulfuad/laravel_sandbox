@@ -13,4 +13,5 @@ return [
         'submit'              => 'Create Questionnaire'
     ],
     'add_question' => 'Add New Question',
+    'take_survey'  => 'Take survey',
 ];

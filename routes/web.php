@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
 
 Auth::routes();
 
@@ -18,3 +18,7 @@ Route::resource('questionnaires', 'QuestionnaireController')
 Route::resource('questionnaires.questions', 'QuestionController')
     ->only(['create', 'store', 'show'])
     ->middleware('auth');
+
+
+Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show')->name('surveys.show');
+Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store')->name('surveys.store');
