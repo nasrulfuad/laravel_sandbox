@@ -12,11 +12,15 @@ class QuestionController extends Controller
 {
     public function create(Questionnaire $questionnaire): View
     {
+        $this->authorize('view', $questionnaire);
+
         return view('question.create', compact('questionnaire'));
     }
 
     public function store(QuestionRequest $request, Questionnaire $questionnaire): RedirectResponse
     {
+        $this->authorize('view', $questionnaire);
+
         $data = $request->validated();
 
         \DB::transaction(function () use($questionnaire, $data) {
@@ -30,6 +34,8 @@ class QuestionController extends Controller
 
     public function destroy(Questionnaire $questionnaire, Question $question): RedirectResponse
     {
+        $this->authorize('view', $questionnaire);
+
         \DB::transaction(function () use($question) {
             $question->answers()->delete();
 

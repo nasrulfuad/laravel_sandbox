@@ -14,7 +14,6 @@ Route::resource('questionnaires', 'QuestionnaireController')
     ->only(['create', 'store', 'show'])
     ->middleware('auth');
 
-
 Route::resource('questionnaires.questions', 'QuestionController')
     ->only(['create', 'store', 'show', 'destroy'])
     ->middleware('auth');

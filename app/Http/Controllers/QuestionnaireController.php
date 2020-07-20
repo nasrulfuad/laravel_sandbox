@@ -24,6 +24,8 @@ class QuestionnaireController extends Controller
 
     public function show(Questionnaire $questionnaire): View
     {
+        $this->authorize('view', $questionnaire);
+
         $questionnaire->load('questions.answers.responses');
 
         return view('questionnaire.show', compact('questionnaire'));
